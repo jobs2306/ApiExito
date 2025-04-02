@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ApiExito.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class initialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -77,12 +77,10 @@ namespace ApiExito.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     nombre = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    nit = table.Column<string>(type: "longtext", nullable: false)
+                    nit = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    cc = table.Column<int>(type: "int", nullable: false),
-                    celular = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    varchar = table.Column<string>(type: "longtext", nullable: false)
+                    cc = table.Column<int>(type: "int", nullable: true),
+                    celular = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -230,11 +228,11 @@ namespace ApiExito.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     modelo = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    color = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    tipo = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     diesel_gasolina = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    color = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    tipo = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Clienteid = table.Column<int>(type: "int", nullable: false)
                 },
@@ -257,16 +255,48 @@ namespace ApiExito.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     fecha = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    condicion_mecanica = table.Column<string>(type: "longtext", nullable: false)
+                    tecnico_encargado = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Vehiculoid = table.Column<int>(type: "int", nullable: false),
+                    fecha_salida = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    condicion_mecanica = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     kilometraje = table.Column<int>(type: "int", nullable: false),
-                    trabajo_realizar = table.Column<string>(type: "longtext", nullable: false)
+                    nivel = table.Column<int>(type: "int", nullable: false),
+                    trabajo_realizar = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    observacion = table.Column<string>(type: "longtext", nullable: false)
+                    observacion = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    dias_garantia = table.Column<int>(type: "int", nullable: false),
-                    fecha_salida = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Vehiculoid = table.Column<int>(type: "int", nullable: false)
+                    dias_garantia = table.Column<int>(type: "int", nullable: true),
+                    EspejoDerecho = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    EspejoIzquierdo = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    EspejoRetro = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    RejillaAire = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    Tapete = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    Plumillas = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    MemoriaUsb = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    TapaGasolian = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    Bateria = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    Radio = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    VidriosPuertas = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    PanoramicoDel = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    PanoramicoTra = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    LlantaRep = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    PlacaDel = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    PlacaTra = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    MedidorAceite = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    TapasLlanta = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    LuzDelDer = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    LuzDelIz1 = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    LuzTrasDer = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    LuzTrasIz1 = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    Rayones = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    Pangones = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    KitCarrera = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    TapaRadiador = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    MarquillaCromada = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    OtrosAccesorios = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {

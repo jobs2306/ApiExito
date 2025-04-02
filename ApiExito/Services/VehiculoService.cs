@@ -60,6 +60,11 @@ namespace ApiExito.Services
             return true;
         }
 
+        public async Task<Vehiculo?> GetByPlacaAsync(string placa)
+        {
+            return await _context.Vehiculo.FirstOrDefaultAsync(v => v.placa == placa);
+        }
+
         public bool Verify(int id)
         {
             return _context.ControlVehiculo.Any(p => p.Vehiculoid == id);

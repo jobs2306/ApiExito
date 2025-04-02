@@ -19,6 +19,26 @@ namespace ApiExito.Services
             return await _context.ControlVehiculo.ToListAsync();
         }
 
+        public async Task<IEnumerable<ControlVehiculo>> GetAllByVehiculoAsync(int vehiculoId)
+        {
+            return await _context.ControlVehiculo
+            .Where(c => c.Vehiculoid == vehiculoId)
+            .ToListAsync();
+        }
+
+        public async Task<ControlVehiculo> GetVehiculoTaller(int vehiculoId)
+        {
+            return await _context.ControlVehiculo
+            .FirstOrDefaultAsync(c => c.Vehiculoid == vehiculoId && c.fecha_salida == null);
+        }
+
+        public async Task<IEnumerable<ControlVehiculo>> GetVehiculosTaller()
+        {
+            return await _context.ControlVehiculo
+            .Where(c => c.fecha_salida == null)
+            .ToListAsync();
+        }
+
         public async Task<ControlVehiculo> GetByIdAsync(int id)
         {
             return await _context.ControlVehiculo.FindAsync(id);

@@ -9,16 +9,24 @@ namespace ApiExito.Controllers
     public class ControlVehiculoController : ControllerBase
     {
         private readonly IControlVehiculoService _Service;
+        private readonly IVehiculoService _Vehiculo;
 
-        public ControlVehiculoController(IControlVehiculoService service)
+        public ControlVehiculoController(IControlVehiculoService service, IVehiculoService vehiculo)
         {
             _Service = service;
+            _Vehiculo = vehiculo;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ControlVehiculo>>> GetAll()
         {
             return Ok(await _Service.GetAllAsync());
+        }
+        
+        [HttpGet("taller")]
+        public  async Task<ActionResult<IEnumerable<ControlVehiculo>>> GetVehiculoTaller()
+        {
+            return Ok(await _Service.GetVehiculosTaller());
         }
 
         [HttpGet("{id}")]
@@ -32,7 +40,21 @@ namespace ApiExito.Controllers
         [HttpPost]
         public async Task<ActionResult<Cliente>> Create([FromBody] ControlVehiculo control)
         {
+            //Verificar si el vehiculo ya tiene un control de entrada
+            var controles = await _Service.GetVehiculoTaller(control.Vehiculoid);
+
+            if(controles != null)
+                return Conflict("El vehiculo ya se encuentra en el taller");
+
+
             var newObject = await _Service.AddAsync(control);
+
+            var vehiculo = await _Vehiculo.GetByIdAsync(control.Vehiculoid);
+            
+            if(vehiculo == null)
+                return Conflict("El vehiculo relacionado no existe");
+
+
             return CreatedAtAction(nameof(GetById), new { id = newObject.id }, newObject);
         }
 

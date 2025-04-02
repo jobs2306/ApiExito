@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiExito.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250326194917_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250401031113_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,22 +28,16 @@ namespace ApiExito.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("cc")
+                    b.Property<int?>("cc")
                         .HasColumnType("int");
 
                     b.Property<string>("celular")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("nit")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("nombre")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("varchar")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -58,31 +52,119 @@ namespace ApiExito.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<bool?>("Bateria")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("EspejoDerecho")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("EspejoIzquierdo")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("EspejoRetro")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("KitCarrera")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("LlantaRep")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("LuzDelDer")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("LuzDelIz1")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("LuzTrasDer")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("LuzTrasIz1")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("MarquillaCromada")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("MedidorAceite")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("MemoriaUsb")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("OtrosAccesorios")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool?>("Pangones")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("PanoramicoDel")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("PanoramicoTra")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("PlacaDel")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("PlacaTra")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("Plumillas")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("Radio")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("Rayones")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("RejillaAire")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("TapaGasolian")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("TapaRadiador")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("TapasLlanta")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool?>("Tapete")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<int>("Vehiculoid")
                         .HasColumnType("int");
 
+                    b.Property<bool?>("VidriosPuertas")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("condicion_mecanica")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("dias_garantia")
+                    b.Property<int?>("dias_garantia")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("fecha")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("fecha_salida")
+                    b.Property<DateTime?>("fecha_salida")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("kilometraje")
                         .HasColumnType("int");
 
+                    b.Property<int>("nivel")
+                        .HasColumnType("int");
+
                     b.Property<string>("observacion")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("tecnico_encargado")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("trabajo_realizar")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("id");
@@ -102,7 +184,6 @@ namespace ApiExito.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("color")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("diesel_gasolina")
@@ -122,7 +203,6 @@ namespace ApiExito.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("tipo")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("id");

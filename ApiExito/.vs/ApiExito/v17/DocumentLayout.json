@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D1F8506-A26C-45DE-A278-AD7DBAE2AB60}|ApiExito.csproj|c:\\prog\\dotnet\\project exito\\apiexito\\apiexito\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D1F8506-A26C-45DE-A278-AD7DBAE2AB60}|ApiExito.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D1F8506-A26C-45DE-A278-AD7DBAE2AB60}|ApiExito.csproj|c:\\prog\\dotnet\\project exito\\apiexito\\apiexito\\model\\controlvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D1F8506-A26C-45DE-A278-AD7DBAE2AB60}|ApiExito.csproj|solutionrelative:model\\controlvehiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Title": "ControlVehiculo.cs",
+              "DocumentMoniker": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\Model\\ControlVehiculo.cs",
+              "RelativeDocumentMoniker": "Model\\ControlVehiculo.cs",
+              "ToolTip": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\Model\\ControlVehiculo.cs",
+              "RelativeToolTip": "Model\\ControlVehiculo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T13:54:58.955Z",
+              "WhenOpened": "2025-04-02T04:48:15.261Z",
               "EditorCaption": ""
             }
           ]

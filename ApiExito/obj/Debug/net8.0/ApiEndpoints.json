@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "ApiExito.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ApiExito.Controllers.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiExito.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ApiExito.Controllers.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiExito.Controllers.ClienteController",
     "Method": "GetAll",
     "RelativePath": "api/Cliente",
@@ -107,6 +139,58 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiExito.Controllers.ClienteController",
+    "Method": "GetByCC",
+    "RelativePath": "api/Cliente/cc/{cc}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cc",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiExito.Model.Cliente",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiExito.Controllers.ClienteController",
+    "Method": "GetByNit",
+    "RelativePath": "api/Cliente/nit/{nit}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nit",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiExito.Model.Cliente",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ApiExito.Controllers.ClienteController",
@@ -229,6 +313,26 @@
   },
   {
     "ContainingType": "ApiExito.Controllers.ControlVehiculoController",
+    "Method": "GetVehiculoTaller",
+    "RelativePath": "api/ControlVehiculo/taller",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiExito.Model.ControlVehiculo, ApiExito, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiExito.Controllers.ControlVehiculoController",
     "Method": "Test",
     "RelativePath": "api/ControlVehiculo/test",
     "HttpMethod": "GET",
@@ -345,6 +449,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiExito.Controllers.VehiculoController",
+    "Method": "GetByPlaca",
+    "RelativePath": "api/Vehiculo/placa/{placa}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "placa",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiExito.Model.Vehiculo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ApiExito.Controllers.VehiculoController",

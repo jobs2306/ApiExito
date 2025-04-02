@@ -9,11 +9,13 @@ namespace ApiExito.Controllers
 
     public class VehiculoController : ControllerBase
     {
-        private readonly IVehiculoService _Service;
+        private readonly IVehiculoService _Service; 
+        private readonly IClienteService _ClienteService;
 
-        public VehiculoController(IVehiculoService service)
+        public VehiculoController(IVehiculoService service, IClienteService cliente)
         {
             _Service = service;
+            _ClienteService = cliente;
         }
 
         [HttpGet]
@@ -30,9 +32,41 @@ namespace ApiExito.Controllers
             return Ok(objeto);
         }
 
+        [HttpGet("placa/{placa}")]
+        public async Task<ActionResult<Vehiculo>> GetByPlaca(string placa)
+        {
+            var objeto = await _Service.GetByPlacaAsync(placa);
+            if (objeto == null) return NotFound();
+            return Ok(objeto);
+        }
+
         [HttpPost]
         public async Task<ActionResult<Cliente>> Create([FromBody] Vehiculo vehiculo)
         {
+            if (string.IsNullOrEmpty(vehiculo.placa))
+                return BadRequest("Debe indicar la placa del vehiculo");
+
+            var vehiculoToCreate = await _Service.GetByPlacaAsync(vehiculo.placa);
+            if (vehiculoToCreate != null)
+                return Conflict("El vehiculo ya se ha creado");
+
+            if (string.IsNullOrEmpty(vehiculo.marca))
+                return BadRequest("Debe indicar la marca del vehiculo");
+
+            if (string.IsNullOrEmpty(vehiculo.diesel_gasolina))
+                return BadRequest("Debe indicar si es Diesel o Gasolina");
+
+            if (vehiculo.diesel_gasolina.ToLower() != "diesel" && vehiculo.diesel_gasolina.ToLower() != "gasolina")
+                return BadRequest("Debe indicar si es Diesel o Gasolina");
+
+            if (string.IsNullOrEmpty(vehiculo.modelo))
+                return BadRequest("Debe indicar el modelo del vehiculo");
+
+            var cliente = await _ClienteService.GetByIdAsync(vehiculo.Clienteid);
+
+            if(cliente == null)
+                return BadRequest("El cliente escogido no existe");
+
             var newObject = await _Service.AddAsync(vehiculo);
             return CreatedAtAction(nameof(GetById), new { id = newObject.id }, newObject);
         }
@@ -42,6 +76,7 @@ namespace ApiExito.Controllers
         {
             var updated = await _Service.UpdateAsync(id, vehiculo);
             if (!updated) return NotFound();
+            
             return NoContent();
         }
 

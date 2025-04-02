@@ -9,6 +9,7 @@ namespace ApiExito.Services.Interfaces
         Task<Vehiculo> AddAsync(Vehiculo Vehiculo);
         Task<bool> UpdateAsync(int id, Vehiculo Vehiculo);
         Task<bool> DeleteAsync(int id);
+        Task<Vehiculo?> GetByPlacaAsync(string placa);
         bool Verify(int id);
     }
 }

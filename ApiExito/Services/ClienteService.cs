@@ -2,6 +2,7 @@
 using ApiExito.Model;
 using ApiExito.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace ApiExito.Services
 {
@@ -58,6 +59,16 @@ namespace ApiExito.Services
 
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<Cliente> GetByCedulaAsync(int? cedula)
+        {
+            return await _context.Cliente.FirstOrDefaultAsync(c => c.cc  == cedula);
+        }
+
+        public async Task<Cliente> GetByNitAsync(string? nit)
+        {
+            return await _context.Cliente.FirstOrDefaultAsync(c => c.nit == nit);
         }
 
         public bool Verify(int id)

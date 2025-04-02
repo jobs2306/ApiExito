@@ -9,6 +9,8 @@ namespace ApiExito.Services.Interfaces
         Task<Cliente> AddAsync(Cliente cliente);
         Task<bool> UpdateAsync(int id, Cliente cliente);
         Task<bool> DeleteAsync(int id);
+        Task<Cliente> GetByCedulaAsync(int? cedula);
+        Task<Cliente> GetByNitAsync(string nit);
         bool Verify(int id);
     }
 }

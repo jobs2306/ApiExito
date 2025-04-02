@@ -211,3 +211,11 @@ C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\obj\Debug\net8.0\refint\ApiExito.
 C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\obj\Debug\net8.0\ApiExito.pdb
 C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\obj\Debug\net8.0\ApiExito.genruntimeconfig.cache
 C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\obj\Debug\net8.0\ref\ApiExito.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
