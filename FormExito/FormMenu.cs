@@ -39,7 +39,6 @@ namespace FormExito
             // Si no hay ninguno abierto, creamos una nueva instancia
             FormTaller Taller = new FormTaller();
             Taller.Show();
-
         }
 
         private void ButHistorial_Click(object sender, EventArgs e)
@@ -47,7 +46,7 @@ namespace FormExito
             // Buscar si ya existe un formulario abierto con el nombre "FormHistorial"
             foreach (Form form in Application.OpenForms)
             {
-                if (form is FormHistorial)
+                if (form is FormVehiculos)
                 {
                     form.BringToFront(); // Traer al frente si ya está abierto
                     return; // Salir del método sin abrir una nueva instancia
@@ -55,7 +54,7 @@ namespace FormExito
             }
 
             // Si no hay ninguno abierto, creamos una nueva instancia
-            FormHistorial historial = new FormHistorial();
+            FormVehiculos historial = new FormVehiculos();
             historial.Show();
         }
 

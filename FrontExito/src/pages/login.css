@@ -1,0 +1,98 @@
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.login-contenedor {
+  display: flex;
+  height: 100vh;
+}
+
+/* Panel izquierdo */
+.login-left {
+  width: 100%;
+  background-color: #003366;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  width: 94%;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 94%;
+}
+
+.password-wrapper button {
+  position: absolute;
+  top: 45%;
+  right: 0px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn-green {
+  background-color: #00b32d;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background-color: #009e27;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}

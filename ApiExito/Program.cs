@@ -72,6 +72,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+IWebHostEnvironment env = app.Environment;
+//Rotativa.AspNetCore.RotativaConfiguration.Setup(env.WebRootPath,"../Rotativa/Windows");
+
+//Cors para React
+app.UseCors(builder =>
+    builder.WithOrigins("http://localhost:5173")
+           .AllowAnyMethod()
+           .AllowAnyHeader());
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

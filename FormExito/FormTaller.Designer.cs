@@ -43,6 +43,8 @@
             panel7 = new Panel();
             panel2 = new Panel();
             panel12 = new Panel();
+            ButUpdate = new ConfButton();
+            panel15 = new Panel();
             panel13 = new Panel();
             PanelContenedor = new Panel();
             panel14 = new Panel();
@@ -53,6 +55,7 @@
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
+            panel12.SuspendLayout();
             panel13.SuspendLayout();
             SuspendLayout();
             // 
@@ -193,11 +196,42 @@
             // 
             // panel12
             // 
+            panel12.Controls.Add(ButUpdate);
+            panel12.Controls.Add(panel15);
             panel12.Dock = DockStyle.Top;
             panel12.Location = new Point(0, 168);
             panel12.Name = "panel12";
-            panel12.Size = new Size(1262, 20);
+            panel12.Size = new Size(1262, 49);
             panel12.TabIndex = 3;
+            // 
+            // ButUpdate
+            // 
+            ButUpdate.BackColor = Color.FromArgb(0, 156, 15);
+            ButUpdate.BackGroundColor = Color.FromArgb(0, 156, 15);
+            ButUpdate.BorderColor = Color.PaleVioletRed;
+            ButUpdate.BorderRadio = 40;
+            ButUpdate.BorderSize = 0;
+            ButUpdate.Dock = DockStyle.Left;
+            ButUpdate.FlatAppearance.BorderSize = 0;
+            ButUpdate.FlatStyle = FlatStyle.Flat;
+            ButUpdate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ButUpdate.ForeColor = Color.White;
+            ButUpdate.Location = new Point(1064, 0);
+            ButUpdate.Name = "ButUpdate";
+            ButUpdate.Size = new Size(188, 49);
+            ButUpdate.TabIndex = 3;
+            ButUpdate.Text = "Actualizar";
+            ButUpdate.TextColor = Color.White;
+            ButUpdate.UseVisualStyleBackColor = false;
+            ButUpdate.Click += ButUpdate_Click;
+            // 
+            // panel15
+            // 
+            panel15.Dock = DockStyle.Left;
+            panel15.Location = new Point(0, 0);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(1064, 49);
+            panel15.TabIndex = 2;
             // 
             // panel13
             // 
@@ -205,7 +239,7 @@
             panel13.Controls.Add(PanelContenedor);
             panel13.Controls.Add(panel14);
             panel13.Dock = DockStyle.Top;
-            panel13.Location = new Point(0, 188);
+            panel13.Location = new Point(0, 217);
             panel13.Name = "panel13";
             panel13.Size = new Size(1262, 861);
             panel13.TabIndex = 4;
@@ -246,6 +280,7 @@
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
+            panel12.ResumeLayout(false);
             panel13.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -270,5 +305,7 @@
         private Panel panel13;
         private Panel panel14;
         private Panel PanelContenedor;
+        private ConfButton ButUpdate;
+        private Panel panel15;
     }
 }

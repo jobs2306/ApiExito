@@ -48,7 +48,7 @@
             panelUpdate = new Panel();
             ButSalida = new ConfButton();
             panel183 = new Panel();
-            dateTimePicker1 = new DateTimePicker();
+            dateTimeSalida = new DateTimePicker();
             panel184 = new Panel();
             panel182 = new Panel();
             label57 = new Label();
@@ -662,7 +662,7 @@
             // 
             // panel183
             // 
-            panel183.Controls.Add(dateTimePicker1);
+            panel183.Controls.Add(dateTimeSalida);
             panel183.Controls.Add(panel184);
             panel183.Controls.Add(panel182);
             panel183.Dock = DockStyle.Left;
@@ -671,13 +671,13 @@
             panel183.Size = new Size(527, 50);
             panel183.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // dateTimeSalida
             // 
-            dateTimePicker1.Dock = DockStyle.Left;
-            dateTimePicker1.Location = new Point(220, 10);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(280, 27);
-            dateTimePicker1.TabIndex = 24;
+            dateTimeSalida.Dock = DockStyle.Left;
+            dateTimeSalida.Location = new Point(220, 10);
+            dateTimeSalida.Name = "dateTimeSalida";
+            dateTimeSalida.Size = new Size(280, 27);
+            dateTimeSalida.TabIndex = 24;
             // 
             // panel184
             // 
@@ -3890,7 +3890,7 @@
         private Panel panelUpdate;
         private ConfButton ButSalida;
         private Panel panel183;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimeSalida;
         private Panel panel184;
         private Panel panel182;
         private Label label57;

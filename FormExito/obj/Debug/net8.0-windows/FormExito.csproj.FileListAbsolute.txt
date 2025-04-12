@@ -23,4 +23,4 @@ C:\PROG\DotNet\Project Exito\ApiExito\FormExito\obj\Debug\net8.0-windows\FormExi
 C:\PROG\DotNet\Project Exito\ApiExito\FormExito\obj\Debug\net8.0-windows\FormExito.csproj.Up2Date
 C:\PROG\DotNet\Project Exito\ApiExito\FormExito\obj\Debug\net8.0-windows\FormExito.FormTaller.resources
 C:\PROG\DotNet\Project Exito\ApiExito\FormExito\obj\Debug\net8.0-windows\FormExito.FormMenu.resources
-C:\PROG\DotNet\Project Exito\ApiExito\FormExito\obj\Debug\net8.0-windows\FormExito.FormHistorial.resources
+C:\PROG\DotNet\Project Exito\ApiExito\FormExito\obj\Debug\net8.0-windows\FormExito.FormVehiculos.resources

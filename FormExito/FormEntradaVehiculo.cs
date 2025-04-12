@@ -21,6 +21,10 @@ namespace FormExito
     {
         private bool _isUpdate = false;
 
+        Vehiculo vehiculo1 = new Vehiculo();
+        Cliente cliente1 = new Cliente();
+        ControlVehiculo control1 = new ControlVehiculo();
+
         public FormEntradaVehiculo()
         {
             InitializeComponent();
@@ -30,13 +34,26 @@ namespace FormExito
             _isUpdate = false;
         }
 
-        public FormEntradaVehiculo(Vehiculo vehiculo, ControlVehiculo control, Cliente cliente) : this()
+        public FormEntradaVehiculo(Vehiculo vehiculo, ControlVehiculo control, Cliente cliente, bool History) : this()
         {
             //InitializeComponent();
             this.Size = new Size(1280, 1080);
             panelUpdate.Visible = true;
             ButGenerarIngreso.Text = "Actualizar";
             LoadFormVehiculo(vehiculo, control, cliente);
+            vehiculo1 = vehiculo;
+            cliente1 = cliente;
+
+            if(History)
+            {
+                if (control.fecha_salida != null)
+                    dateTimeSalida.Value = control.fecha_salida.Value;
+                else
+                    dateTimeSalida.Visible = false;
+            }
+            
+            
+            control1 = control;
             _isUpdate = true;
             
         }
@@ -166,6 +183,8 @@ namespace FormExito
             if (string.IsNullOrEmpty(Placa) || string.IsNullOrEmpty(Marca) || string.IsNullOrEmpty(Modelo))
             { MessageBox.Show("Debe indicar Placa, Marca y Modelo del vehiculo"); return; }
 
+            var Metodos = new MetodosHttp();
+
             if (Kilometraje == 0)
             {
                 DialogResult result = MessageBox.Show(
@@ -203,8 +222,6 @@ namespace FormExito
 
             var cliente = new Cliente();
 
-            var Metodos = new MetodosHttp();
-
             cliente = await Metodos.GetObject<Cliente>(link);
 
             //Cliente no existe, se debe crear
@@ -227,7 +244,6 @@ namespace FormExito
                     MessageBox.Show("No se realizó el registro, verifique la información del cliente");
                     return;
                 }
-
             }
 
             //Cliente existe o creado, se avanza a la segunda parte, vehiculo
@@ -304,6 +320,8 @@ namespace FormExito
 
                 Vehiculoid = vehiculo.id,
 
+                fecha_salida = control1.fecha_salida,
+
                 EspejoDerecho = EspejoDer,
                 EspejoIzquierdo = EspejoIzq,
                 EspejoRetro = EspejoRetro,
@@ -334,18 +352,37 @@ namespace FormExito
                 OtrosAccesorios = OtrosAccesorios
             };
 
-            link = Program.UrlApi + "controlvehiculo";
-            Control = await Metodos.PostObject<ControlVehiculo>(link, Control);
-
-            if (Control == null)
+            //Verificar si se va a crear o actualizar
+            if (!_isUpdate)
             {
-                MessageBox.Show("Error, no se pudo crear el registro, verifique la información");
-                return;
+                link = Program.UrlApi + "controlvehiculo";
+                Control = await Metodos.PostObject<ControlVehiculo>(link, Control);
+
+                if (Control == null)
+                {
+                    MessageBox.Show("Error, no se pudo crear el registro, verifique la información");
+                    return;
+                }
+
+                MessageBox.Show("Entrada generada satisfactoriamente");
+                ResetFormControls(this);
             }
+            //Actualizar estado
+            else
+            {
+                link = Program.UrlApi + "controlvehiculo/" + control1.id;
+                Control.id = control1.id;
+                control1 = Control;
+                bool Update = await Metodos.PutObject<ControlVehiculo>(link, Control);
 
+                if (Update == false)
+                {
+                    MessageBox.Show("Error, no se pudo actualizar el registro, verifique la información");
+                    return;
+                }
 
-            MessageBox.Show("Entrada generada satisfactoriamente");
-            ResetFormControls(this);
+                MessageBox.Show("Entrada actualizada satisfactoriamente");
+            }
         }
 
         private void textNit_KeyPress(object sender, KeyPressEventArgs e)
@@ -409,6 +446,9 @@ namespace FormExito
                 else if (c is TrackBar trackbar)
                     trackbar.Value = trackbar.Minimum; // Resetear TrackBar
 
+                else if (c is RichTextBox richTextBox)
+                    richTextBox.Clear(); // Limpiar RichTextBox
+
                 else if (c.HasChildren)
                     ResetFormControls(c); // Llamada recursiva para contenedores como Panel, GroupBox, etc.
             }
@@ -416,7 +456,9 @@ namespace FormExito
 
         private void ButSalida_Click(object sender, EventArgs e)
         {
-
+            control1.fecha_salida = dateTimeSalida.Value;
+            ButGenerarIngreso_Click(sender, e);
+            this.Close();
         }
     }
 }

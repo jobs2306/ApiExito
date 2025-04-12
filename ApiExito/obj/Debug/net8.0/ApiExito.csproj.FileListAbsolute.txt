@@ -219,3 +219,9 @@ C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.Identi
 C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\ApiExito.staticwebassets.endpoints.json
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\obj\Debug\net8.0\staticwebassets\msbuild.ApiExito.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\PROG\DotNet\Project Exito\ApiExito\ApiExito\bin\Debug\net8.0\Rotativa.AspNetCore.dll

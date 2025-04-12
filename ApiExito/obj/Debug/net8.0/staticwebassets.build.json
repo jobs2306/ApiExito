@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "WYPgw7fgBcq0vyJi4+EXLAK3VQAB+o6gOXteVuXeHsw=",
+  "Hash": "3vqZKiHSAt1Ji5qGRg+vMryv2oBf+0NU03AKcVz2n7k=",
   "Source": "ApiExito",
   "BasePath": "_content/ApiExito",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

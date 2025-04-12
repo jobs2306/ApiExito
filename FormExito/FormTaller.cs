@@ -19,23 +19,22 @@ namespace FormExito
             CargarVehiculosEnTaller();
         }
 
-        private void confButton1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private async void CargarVehiculosEnTaller()
         {
+            MessageBox.Show("Hola");
+
             var Metodos = new MetodosHttp();
 
             string link = Program.UrlApi + "controlvehiculo/taller";
 
             List<ControlVehiculo> ControlVehiculos = await Metodos.GetObject<List<ControlVehiculo>>(link);
 
+            
+
             // Limpiar el panel antes de agregar nuevos elementos
             PanelContenedor.Controls.Clear();
 
-            if(ControlVehiculos != null)
+            if (ControlVehiculos != null)
             {
                 foreach (var controlVehiculo in ControlVehiculos)
                 {
@@ -109,11 +108,11 @@ namespace FormExito
                     {
                         Text = $"Placa: {vehiculo.placa}",
                         AutoSize = true,
-                        Font = new Font("Arial",14),
+                        Font = new Font("Arial", 14),
                         Location = new Point(10, 10),
                         Dock = DockStyle.Left
                     };
-                    
+
                     // Etiqueta para el Nombre del Cliente
                     Label lblCliente = new Label
                     {
@@ -190,10 +189,14 @@ namespace FormExito
             link = Program.UrlApi + "cliente/" + vehiculo.Clienteid;
             Cliente cliente = await Metodos.GetObject<Cliente>(link);
             // Abrir el Form con la información del vehículo
-            FormEntradaVehiculo formDetalle = new FormEntradaVehiculo(vehiculo, controlVehiculo, cliente);
+            FormEntradaVehiculo formDetalle = new FormEntradaVehiculo(vehiculo, controlVehiculo, cliente, false);
 
             formDetalle.Show();
         }
 
+        private void ButUpdate_Click(object sender, EventArgs e)
+        {
+            CargarVehiculosEnTaller();
+        }
     }
 }
