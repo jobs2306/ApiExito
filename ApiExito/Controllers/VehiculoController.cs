@@ -1,5 +1,6 @@
 ﻿using ApiExito.Model;
 using ApiExito.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiExito.Controllers
@@ -19,6 +20,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Vehiculo>>> GetAll()
         {
             return Ok(await _Service.GetAllAsync());
@@ -33,6 +35,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpGet("placa/{placa}")]
+        [Authorize]
         public async Task<ActionResult<Vehiculo>> GetByPlaca(string placa)
         {
             var objeto = await _Service.GetByPlacaAsync(placa);
@@ -41,6 +44,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<ActionResult<Cliente>> Create([FromBody] Vehiculo vehiculo)
         {
             if (string.IsNullOrEmpty(vehiculo.placa))
@@ -72,6 +76,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<IActionResult> Update(int id, [FromBody] Vehiculo vehiculo)
         {
             var updated = await _Service.UpdateAsync(id, vehiculo);
@@ -81,6 +86,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<IActionResult> Delete(int id)
         {
             if (_Service.Verify(id)) return BadRequest("No se puede eliminar porque está en uso.");
@@ -88,12 +94,6 @@ namespace ApiExito.Controllers
             var deleted = await _Service.DeleteAsync(id);
             if (!deleted) return NotFound();
             return NoContent();
-        }
-
-        [HttpGet("test")]
-        public async Task<IActionResult> Test()
-        {
-            return Ok();
         }
     }
 }

@@ -1,0 +1,11 @@
+wwwroot\banner\banner.png
+wwwroot\banner\banner01.png
+wwwroot\banner\logo.png
+wwwroot\firmas\blanco.png
+wwwroot\firmas\firma.png
+wwwroot\fonts\Arial.ttf
+wwwroot\fonts\FrontPageNeue.otf
+wwwroot\fonts\FrontPageNeue.woff
+wwwroot\fonts\OFL.txt
+wwwroot\fonts\PLEASE READ!.txt
+wwwroot\fonts\righteous.ttf

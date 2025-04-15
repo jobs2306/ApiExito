@@ -1,10 +1,36 @@
-import React, { useState } from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 import './RegistroEntrada.css'
 import { useNavigate } from "react-router-dom";
-import axios from 'axios'
+import api from '../api' 
+import axios from 'axios' // 
 
 
 const RegistroEntrada = () => {
+
+  useEffect(() => {
+    const verificarToken = async () => {
+      const token = localStorage.getItem('token')
+      if (!token) {
+        navigate('/login')
+        return
+      }
+
+      try {
+        await api.get('auth/test', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        // Token válido, no hace nada
+      } catch {
+        localStorage.removeItem('token')
+        navigate('/login')
+      }
+    }
+
+    verificarToken()
+  }, [])
 
   const navigate = useNavigate();
   
@@ -80,19 +106,29 @@ const RegistroEntrada = () => {
     if (!nit && !cc) return alert('Debe indicar NIT o CC')
     if (!nombre) return alert('Debe indicar el nombre del cliente')
     if (!placa || !marca || !modelo) return alert('Debe indicar Placa, Marca y Modelo')
+    
+    if (kilometraje == 0) 
+    {
+      const confirmar = window.confirm('Indicó kilometraje en 0, ¿Desea continuar?')
+      if (!confirmar) return
+    }
 
-    const apiUrl = 'https://localhost:7136/api/'
-    const metodos = axios.create({ baseURL: apiUrl })
+    if (nivel == 0) 
+      {
+        const confirmar = window.confirm('Indicó nivel de combustible en 0, ¿Desea continuar?')
+        if (!confirmar) return
+      }
+      
 
     try {
       // Verificar o crear cliente
       let clienteResponse = null
       try {
         const ruta = cc ? `cliente/cc/${cc}` : `cliente/nit/${nit}`
-        clienteResponse = await metodos.get(ruta)
+        clienteResponse = await api.get(ruta)
       } catch {
         const nuevoCliente = { nombre, cc: parseInt(cc || '0'), nit, celular }
-        const res = await metodos.post('cliente', nuevoCliente)
+        const res = await api.post('cliente', nuevoCliente)
         clienteResponse = { data: res.data }
       }
 
@@ -101,7 +137,7 @@ const RegistroEntrada = () => {
       // Verificar o crear vehiculo
       let vehiculoResponse = null
       try {
-        vehiculoResponse = await metodos.get(`vehiculo/placa/${placa}`)
+        vehiculoResponse = await api.get(`vehiculo/placa/${placa}`)
       } catch {
         const nuevoVehiculo = {
           placa,
@@ -112,7 +148,7 @@ const RegistroEntrada = () => {
           diesel_gasolina: combustible,
           Clienteid: clienteId,
         }
-        const res = await metodos.post('vehiculo', nuevoVehiculo)
+        const res = await api.post('vehiculo', nuevoVehiculo)
         vehiculoResponse = { data: res.data }
       }
 
@@ -133,7 +169,7 @@ const RegistroEntrada = () => {
         ...accesorios,
       }
 
-      const ingreso = await metodos.post('controlvehiculo', control)
+      const ingreso = await api.post('controlvehiculo', control)
 
       if (ingreso.status === 200 || ingreso.status === 201) {
         alert('Ingreso registrado satisfactoriamente')
@@ -146,6 +182,14 @@ const RegistroEntrada = () => {
     
     catch (err) {
       if (axios.isAxiosError(err)) {
+
+        if(err.status === 401) 
+        {
+          const mensaje = "No tiene el permiso necesario para hacer esto"
+          alert(mensaje)
+          return
+        }
+
         const mensaje = err.response?.data || 'Error desconocido'
         const texto = typeof mensaje === 'string' ? mensaje : JSON.stringify(mensaje)
         alert(texto)
@@ -202,11 +246,11 @@ const RegistroEntrada = () => {
             <label>Nombre</label>
             <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
             <label>NIT</label>
-            <input type="text" value={nit} onChange={(e) => setNit(e.target.value)} />
+            <input type="number" value={nit} onChange={(e) => setNit(e.target.value)} />
             <label>CC</label>
-            <input type="text" value={cc} onChange={(e) => setCc(e.target.value)} />
+            <input type="number" value={cc} onChange={(e) => setCc(e.target.value)} />
             <label>Celular</label>
-            <input type="text" value={celular} onChange={(e) => setCelular(e.target.value)} />
+            <input type="number" value={celular} onChange={(e) => setCelular(e.target.value)} />
           </div>
           <div className="grupo">
             <label>Placa</label>

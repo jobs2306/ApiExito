@@ -1,5 +1,6 @@
 ﻿using ApiExito.Model;
 using ApiExito.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiExito.Controllers
@@ -18,18 +19,21 @@ namespace ApiExito.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<ControlVehiculo>>> GetAll()
         {
             return Ok(await _Service.GetAllAsync());
         }
         
         [HttpGet("taller")]
+        [Authorize]
         public  async Task<ActionResult<IEnumerable<ControlVehiculo>>> GetVehiculoTaller()
         {
             return Ok(await _Service.GetVehiculosTaller());
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<ControlVehiculo>> GetById(int id)
         {
             var objeto = await _Service.GetByIdAsync(id);
@@ -38,6 +42,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<ActionResult<Cliente>> Create([FromBody] ControlVehiculo control)
         {
             //Verificar si el vehiculo ya tiene un control de entrada
@@ -59,6 +64,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<IActionResult> Update(int id, [FromBody] ControlVehiculo control)
         {
             var updated = await _Service.UpdateAsync(id, control);
@@ -67,6 +73,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<IActionResult> Delete(int id)
         {
             var deleted = await _Service.DeleteAsync(id);

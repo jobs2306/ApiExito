@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Eye, EyeOff } from 'lucide-react'
 import './login.css'
+import api from '../api' 
+import { useEffect } from 'react'
+
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -11,25 +13,48 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  useEffect(() => {
+    const verificarToken = async () => {
+      const token = localStorage.getItem('token')
+  
+      if (!token) return
+  
+      try {
+        await api.get('auth/test', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        navigate('/dashboard')
+      } catch {
+        localStorage.removeItem('token')
+      }
+    }
+  
+    verificarToken()
+  }, [])
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
-
+  
     try {
-      const response = await axios.post('https://localhost:7136/api/auth/login', {
+      const response = await api.post('auth/login', {
         email: usuario,
         password,
       })
-
+  
       const { token } = response.data
-      localStorage.setItem('token', token)
+      localStorage.setItem('token', token.result)
+      console.log('Token guardado:', token)
+      alert('Sesión iniciada') 
       navigate('/dashboard')
     } 
-    
     catch (err: any) {
       setError(err.response?.data || 'Error de conexión')
     }
   }
+  
 
   return (
     <div className="login-contenedor">

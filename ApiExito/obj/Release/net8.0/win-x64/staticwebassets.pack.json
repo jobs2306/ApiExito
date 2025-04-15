@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner.png",
+      "PackagePath": "staticwebassets\\banner\\banner.png"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner01.png",
+      "PackagePath": "staticwebassets\\banner\\banner01.png"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\logo.png",
+      "PackagePath": "staticwebassets\\banner\\logo.png"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\blanco.png",
+      "PackagePath": "staticwebassets\\firmas\\blanco.png"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\firma.png",
+      "PackagePath": "staticwebassets\\firmas\\firma.png"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\Arial.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Arial.ttf"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.otf",
+      "PackagePath": "staticwebassets\\fonts\\FrontPageNeue.otf"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.woff",
+      "PackagePath": "staticwebassets\\fonts\\FrontPageNeue.woff"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\OFL.txt",
+      "PackagePath": "staticwebassets\\fonts\\OFL.txt"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\PLEASE READ!.txt",
+      "PackagePath": "staticwebassets\\fonts\\PLEASE READ!.txt"
+    },
+    {
+      "Id": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\righteous.ttf",
+      "PackagePath": "staticwebassets\\fonts\\righteous.ttf"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x64\\staticwebassets\\msbuild.ApiExito.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x64\\staticwebassets\\msbuild.ApiExito.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x64\\staticwebassets\\msbuild.build.ApiExito.props",
+      "PackagePath": "build\\ApiExito.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x64\\staticwebassets\\msbuild.buildMultiTargeting.ApiExito.props",
+      "PackagePath": "buildMultiTargeting\\ApiExito.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x64\\staticwebassets\\msbuild.buildTransitive.ApiExito.props",
+      "PackagePath": "buildTransitive\\ApiExito.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

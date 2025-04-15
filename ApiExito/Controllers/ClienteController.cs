@@ -17,12 +17,14 @@ namespace ApiExito.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Cliente>>> GetAll()
         {
             return Ok(await _Service.GetAllAsync());
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<Cliente>> GetById(int id)
         {
             var objeto = await _Service.GetByIdAsync(id);
@@ -32,6 +34,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpGet("cc/{cc}")]
+        [Authorize]
         public async Task<ActionResult<Cliente>> GetByCC(int cc)
         {
             var objeto = await _Service.GetByCedulaAsync(cc);
@@ -40,6 +43,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpGet("nit/{nit}")]
+        [Authorize]
         public async Task<ActionResult<Cliente>> GetByNit(string nit)
         {
             var objeto = await _Service.GetByNitAsync(nit);
@@ -48,6 +52,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<ActionResult<Cliente>> Create([FromBody] Cliente cliente)
         {
             //Verificaciones
@@ -81,6 +86,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "AdminRole,GeneralRole")]
         public async Task<IActionResult> Update(int id, [FromBody] Cliente cliente)
         {
             //Antes de actualizar verificar que exista
@@ -112,6 +118,7 @@ namespace ApiExito.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "AdminRole")]
         public async Task<IActionResult> Delete(int id)
         {
             if (_Service.Verify(id)) return BadRequest("No se puede eliminar porque está en uso.");
@@ -119,12 +126,6 @@ namespace ApiExito.Controllers
             var deleted = await _Service.DeleteAsync(id);
             if (!deleted) return NotFound();
             return NoContent();
-        }
-
-        [HttpGet("test")]
-        public async Task<IActionResult> Test()
-        {
-            return Ok();
         }
     }
 }

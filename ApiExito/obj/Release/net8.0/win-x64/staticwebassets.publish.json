@@ -1,0 +1,1155 @@
+{
+  "Version": 1,
+  "Hash": "GrlatddRx/PVChc3s9GQipqCE8iz+jCSvqoZkN20+K0=",
+  "Source": "ApiExito",
+  "BasePath": "_content/ApiExito",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ApiExito\\wwwroot",
+      "Source": "ApiExito",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner.png",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "banner/banner#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bf9mun55qn",
+      "Integrity": "yfzxRfZUjty87suVl3pJD3l1OwfDSivkWz3hCTq426g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\banner\\banner.png"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner01.png",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "banner/banner01#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ixb50nlbad",
+      "Integrity": "ppcvy7aq9LoZ9xJzXnlhJ13kEz7muKnrtNxuaCBh6Ps=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\banner\\banner01.png"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\logo.png",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "banner/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pdwqny9oz5",
+      "Integrity": "bfUu9BxEcONZSpiS8FWMima5wDzCLl67cndFWg20ULk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\banner\\logo.png"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\blanco.png",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "firmas/blanco#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w0wfkguyhz",
+      "Integrity": "IHzEkNOPdS6i76IZSIkyph17NoY5LhzItXj1SODsb7o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\firmas\\blanco.png"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\firma.png",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "firmas/firma#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0sxxelmgts",
+      "Integrity": "QMvq1QRbPs9BXnHYT5Vaj/ByCvR7u2OuETkYP9iIVrw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\firmas\\firma.png"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\Arial.ttf",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "fonts/Arial#[.{fingerprint}]?.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "frrpv6hibx",
+      "Integrity": "NcDzVZ2NtWnjbDEJW4pg1EFkPZX1kTneQOI/ragZuDM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\Arial.ttf"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.otf",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "fonts/FrontPageNeue#[.{fingerprint}]?.otf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m2s7idwdaz",
+      "Integrity": "3m9OUiavSk9vgyG2hWrBHPb1Jk9h1eSrBcQpuXhZlpY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\FrontPageNeue.otf"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.woff",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "fonts/FrontPageNeue#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8coyttsj65",
+      "Integrity": "SP9szeasqzzNLkZ96PbOtSIo6vNncYyf5A8e+kdhedk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\FrontPageNeue.woff"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\OFL.txt",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "fonts/OFL#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3zmd1ftb7v",
+      "Integrity": "j4J3CNhmOWMdFDtl1HOxAWZYjQ7XbzCT3P8H7klrfLc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\OFL.txt"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\PLEASE READ!.txt",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "fonts/PLEASE READ!#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "01jqnvpk47",
+      "Integrity": "LDpgSsnVfuSqMMQ4fj+fcLmeKMO4WnH8fHaZA5JDW8o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\PLEASE READ!.txt"
+    },
+    {
+      "Identity": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\righteous.ttf",
+      "SourceId": "ApiExito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\",
+      "BasePath": "_content/ApiExito",
+      "RelativePath": "fonts/righteous#[.{fingerprint}]?.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k8kt4xt1ih",
+      "Integrity": "TDzcXeLXDE7nX8nBcjprjy1zFvSbODM1/YJXoX3Yit4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\righteous.ttf"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "banner/banner.bf9mun55qn.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "241731"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yfzxRfZUjty87suVl3pJD3l1OwfDSivkWz3hCTq426g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 23:06:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bf9mun55qn"
+        },
+        {
+          "Name": "label",
+          "Value": "banner/banner.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yfzxRfZUjty87suVl3pJD3l1OwfDSivkWz3hCTq426g="
+        }
+      ]
+    },
+    {
+      "Route": "banner/banner.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "241731"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yfzxRfZUjty87suVl3pJD3l1OwfDSivkWz3hCTq426g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 23:06:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yfzxRfZUjty87suVl3pJD3l1OwfDSivkWz3hCTq426g="
+        }
+      ]
+    },
+    {
+      "Route": "banner/banner01.ixb50nlbad.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner01.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "231604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ppcvy7aq9LoZ9xJzXnlhJ13kEz7muKnrtNxuaCBh6Ps=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 23:42:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ixb50nlbad"
+        },
+        {
+          "Name": "label",
+          "Value": "banner/banner01.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppcvy7aq9LoZ9xJzXnlhJ13kEz7muKnrtNxuaCBh6Ps="
+        }
+      ]
+    },
+    {
+      "Route": "banner/banner01.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\banner01.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "231604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ppcvy7aq9LoZ9xJzXnlhJ13kEz7muKnrtNxuaCBh6Ps=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 23:42:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppcvy7aq9LoZ9xJzXnlhJ13kEz7muKnrtNxuaCBh6Ps="
+        }
+      ]
+    },
+    {
+      "Route": "banner/logo.pdwqny9oz5.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "710483"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bfUu9BxEcONZSpiS8FWMima5wDzCLl67cndFWg20ULk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 18:03:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pdwqny9oz5"
+        },
+        {
+          "Name": "label",
+          "Value": "banner/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bfUu9BxEcONZSpiS8FWMima5wDzCLl67cndFWg20ULk="
+        }
+      ]
+    },
+    {
+      "Route": "banner/logo.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\banner\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "710483"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bfUu9BxEcONZSpiS8FWMima5wDzCLl67cndFWg20ULk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 18:03:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bfUu9BxEcONZSpiS8FWMima5wDzCLl67cndFWg20ULk="
+        }
+      ]
+    },
+    {
+      "Route": "firmas/blanco.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\blanco.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IHzEkNOPdS6i76IZSIkyph17NoY5LhzItXj1SODsb7o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 22:09:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IHzEkNOPdS6i76IZSIkyph17NoY5LhzItXj1SODsb7o="
+        }
+      ]
+    },
+    {
+      "Route": "firmas/blanco.w0wfkguyhz.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\blanco.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "828"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IHzEkNOPdS6i76IZSIkyph17NoY5LhzItXj1SODsb7o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 22:09:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w0wfkguyhz"
+        },
+        {
+          "Name": "label",
+          "Value": "firmas/blanco.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IHzEkNOPdS6i76IZSIkyph17NoY5LhzItXj1SODsb7o="
+        }
+      ]
+    },
+    {
+      "Route": "firmas/firma.0sxxelmgts.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\firma.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7336"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QMvq1QRbPs9BXnHYT5Vaj/ByCvR7u2OuETkYP9iIVrw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Dec 2024 21:24:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0sxxelmgts"
+        },
+        {
+          "Name": "label",
+          "Value": "firmas/firma.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QMvq1QRbPs9BXnHYT5Vaj/ByCvR7u2OuETkYP9iIVrw="
+        }
+      ]
+    },
+    {
+      "Route": "firmas/firma.png",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\firmas\\firma.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7336"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QMvq1QRbPs9BXnHYT5Vaj/ByCvR7u2OuETkYP9iIVrw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Dec 2024 21:24:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QMvq1QRbPs9BXnHYT5Vaj/ByCvR7u2OuETkYP9iIVrw="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/Arial.frrpv6hibx.ttf",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\Arial.ttf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "275572"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/x-font-ttf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NcDzVZ2NtWnjbDEJW4pg1EFkPZX1kTneQOI/ragZuDM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 00:47:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "frrpv6hibx"
+        },
+        {
+          "Name": "label",
+          "Value": "fonts/Arial.ttf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NcDzVZ2NtWnjbDEJW4pg1EFkPZX1kTneQOI/ragZuDM="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/Arial.ttf",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\Arial.ttf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "275572"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/x-font-ttf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NcDzVZ2NtWnjbDEJW4pg1EFkPZX1kTneQOI/ragZuDM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 00:47:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NcDzVZ2NtWnjbDEJW4pg1EFkPZX1kTneQOI/ragZuDM="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/FrontPageNeue.8coyttsj65.woff",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SP9szeasqzzNLkZ96PbOtSIo6vNncYyf5A8e+kdhedk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Mar 2015 21:08:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8coyttsj65"
+        },
+        {
+          "Name": "label",
+          "Value": "fonts/FrontPageNeue.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SP9szeasqzzNLkZ96PbOtSIo6vNncYyf5A8e+kdhedk="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/FrontPageNeue.m2s7idwdaz.otf",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.otf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15196"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/otf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3m9OUiavSk9vgyG2hWrBHPb1Jk9h1eSrBcQpuXhZlpY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Mar 2015 21:07:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m2s7idwdaz"
+        },
+        {
+          "Name": "label",
+          "Value": "fonts/FrontPageNeue.otf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3m9OUiavSk9vgyG2hWrBHPb1Jk9h1eSrBcQpuXhZlpY="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/FrontPageNeue.otf",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.otf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15196"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/otf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3m9OUiavSk9vgyG2hWrBHPb1Jk9h1eSrBcQpuXhZlpY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Mar 2015 21:07:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3m9OUiavSk9vgyG2hWrBHPb1Jk9h1eSrBcQpuXhZlpY="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/FrontPageNeue.woff",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\FrontPageNeue.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SP9szeasqzzNLkZ96PbOtSIo6vNncYyf5A8e+kdhedk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Mar 2015 21:08:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SP9szeasqzzNLkZ96PbOtSIo6vNncYyf5A8e+kdhedk="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/OFL.3zmd1ftb7v.txt",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\OFL.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4527"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j4J3CNhmOWMdFDtl1HOxAWZYjQ7XbzCT3P8H7klrfLc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 00:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3zmd1ftb7v"
+        },
+        {
+          "Name": "label",
+          "Value": "fonts/OFL.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j4J3CNhmOWMdFDtl1HOxAWZYjQ7XbzCT3P8H7klrfLc="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/OFL.txt",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\OFL.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4527"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j4J3CNhmOWMdFDtl1HOxAWZYjQ7XbzCT3P8H7klrfLc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 00:04:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j4J3CNhmOWMdFDtl1HOxAWZYjQ7XbzCT3P8H7klrfLc="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/PLEASE READ!.01jqnvpk47.txt",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\PLEASE READ!.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1514"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LDpgSsnVfuSqMMQ4fj+fcLmeKMO4WnH8fHaZA5JDW8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2014 16:57:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "01jqnvpk47"
+        },
+        {
+          "Name": "label",
+          "Value": "fonts/PLEASE READ!.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LDpgSsnVfuSqMMQ4fj+fcLmeKMO4WnH8fHaZA5JDW8o="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/PLEASE READ!.txt",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\PLEASE READ!.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1514"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LDpgSsnVfuSqMMQ4fj+fcLmeKMO4WnH8fHaZA5JDW8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2014 16:57:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LDpgSsnVfuSqMMQ4fj+fcLmeKMO4WnH8fHaZA5JDW8o="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/righteous.k8kt4xt1ih.ttf",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\righteous.ttf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40892"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/x-font-ttf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TDzcXeLXDE7nX8nBcjprjy1zFvSbODM1/YJXoX3Yit4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Sep 2024 23:11:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k8kt4xt1ih"
+        },
+        {
+          "Name": "label",
+          "Value": "fonts/righteous.ttf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TDzcXeLXDE7nX8nBcjprjy1zFvSbODM1/YJXoX3Yit4="
+        }
+      ]
+    },
+    {
+      "Route": "fonts/righteous.ttf",
+      "AssetFile": "C:\\PROG\\DotNet\\Project Exito\\ApiExito\\ApiExito\\wwwroot\\fonts\\righteous.ttf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40892"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/x-font-ttf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TDzcXeLXDE7nX8nBcjprjy1zFvSbODM1/YJXoX3Yit4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Sep 2024 23:11:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TDzcXeLXDE7nX8nBcjprjy1zFvSbODM1/YJXoX3Yit4="
+        }
+      ]
+    }
+  ]
+}

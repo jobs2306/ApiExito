@@ -1,10 +1,42 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import api from '../api'
 
 const Dashboard = () => {
+
+  useEffect(() => {
+    const verificarToken = async () => {
+      const token = localStorage.getItem('token')
+      if (!token) {
+        navigate('/login')
+        return
+      }
+
+      try {
+        await api.get('auth/test', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        // Token válido, no hace nada
+      } catch {
+        localStorage.removeItem('token')
+        navigate('/login')
+      }
+    }
+
+    verificarToken()
+  }, [])
+
   const navigate = useNavigate()
 
   const handleLogout = () => {
+
+    const confirmar = window.confirm('¿Estás seguro de que desea cerrar sesión?')
+
+    if (!confirmar) return // Si el usuario cancela, no hace nada
+
     localStorage.removeItem('token') // Elimina el token guardado
     navigate('/login') // Redirige al login
   }
@@ -18,7 +50,8 @@ const Dashboard = () => {
         <button style={styles.button} onClick={() => navigate('/ingreso')}>Ingresar Vehículo</button>
         <button style={styles.button} onClick={() => navigate('/taller')}>Vehículos en taller</button>
         <button style={styles.button} onClick={() => navigate('/historial')}>Historial de Vehículos</button>
-        <button style={styles.button} onClick={() => navigate('/login')}>Cambiar Usuario</button>
+        {/* Botón de Registro de Usuario */}
+        <button style={styles.button} onClick={() => navigate('/register')}>Registrar Usuario</button>
 
         {/* Botón de Cerrar Sesión */}
         <button style={styles.logoutButton} onClick={handleLogout}>🔒 Cerrar Sesión</button>
@@ -62,6 +95,18 @@ const styles: { [key: string]: React.CSSProperties } = {
     border: 'none',
     borderRadius: '30px',
     cursor: 'pointer',
+  },
+  registerButton: {
+    width: '250px',
+    padding: '12px',
+    backgroundColor: '#00aa00',
+    color: 'white',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    border: 'none',
+    borderRadius: '30px',
+    cursor: 'pointer',
+    marginTop: '20px',
   },
   logoutButton: {
     width: '250px',

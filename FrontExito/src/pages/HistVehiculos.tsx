@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import api from '../api' 
+import axios from 'axios' // 
 
 type ControlVehiculo = {
   id: number
@@ -31,6 +32,32 @@ type VehiculoEnTaller = {
 }
 
 const HistVehiculos = () => {
+
+  useEffect(() => {
+    const verificarToken = async () => {
+      const token = localStorage.getItem('token')
+      if (!token) {
+        navigate('/login')
+        return
+      }
+
+      try {
+        await api.get('auth/test', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        // Token válido, no hace nada
+      } catch {
+        localStorage.removeItem('token')
+        navigate('/login')
+      }
+    }
+
+    verificarToken()
+  }, [])
+
+
   const [vehiculos, setVehiculos] = useState<VehiculoEnTaller[]>([])
   const [filtro, setFiltro] = useState({
     fecha: '',
@@ -41,8 +68,54 @@ const HistVehiculos = () => {
   })
   const navigate = useNavigate()
 
+  const generarInforme = async (id: number) => {
+    try {
+      const response = await api.get(`reportes/generar/${id}`, {
+        responseType: 'blob' // <- esto es clave para recibir el PDF
+      })
+  
+      const url = window.URL.createObjectURL(new Blob([response.data]))
+      const link = document.createElement('a')
+      link.href = url
+      link.setAttribute('download', `informe_${id}.pdf`)
+      document.body.appendChild(link)
+      link.click()
+      link.remove()
+    } catch (error) {
+      console.error('Error al generar el informe:', error)
+      alert('Hubo un error al generar el informe.')
+    }
+  }
+  
+  const eliminarInforme = async (id: number) => {
+    try {
+
+      const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este informe?')
+      if (!confirmacion) return // Si el usuario cancela, no hacer nada
+      
+      const response = await api.delete(`controlvehiculo/${id}`)
+      fetchData() // Refrescar la lista después de eliminar
+      if(response.status === 200) {
+        alert('Informe eliminado correctamente.')
+        fetchData() // Refrescar la lista después de eliminar
+      }
+    } catch (error) {
+
+      if (axios.isAxiosError(error)) {
+
+        if(error.status === 401) 
+        {
+          const mensaje = "No tiene el permiso necesario para hacer esto"
+          alert(mensaje)
+          return
+        }
+      }
+      console.error('Error al eliminar el informe:', error)
+      alert('Hubo un error al eliminar el informe.')
+    }
+  }
+
   const fetchData = async () => {
-    const api = axios.create({ baseURL: 'https://localhost:7136/api/' })
     try {
       const controlesResponse = await api.get<ControlVehiculo[]>('controlvehiculo')
       const controles = controlesResponse.data
@@ -142,9 +215,16 @@ const HistVehiculos = () => {
                 </button>
               </div>
               <div style={styles.columnaBotones}>
-                <button style={styles.botonAccion} onClick={() => navigate(`/informe/${v.id}`)}>
-                  Informe
-                </button>
+              <button style={styles.botonAccion} onClick={() => generarInforme(v.id)}>
+              Informe
+              </button>
+              </div>
+
+              <div style={styles.columnaBotones}>
+              <button style={styles.botonEliminar} onClick={() => eliminarInforme(v.id)}>
+              Eliminar Registro
+              </button>
+
               </div>
               
             </div>
@@ -214,6 +294,17 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   botonAccion: {
     backgroundColor: '#00b32d',
+    color: 'white',
+    border: 'none',
+    padding: '8px 16px',
+    borderRadius: '10px',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    minWidth: '120px',
+    textAlign: 'center'
+  },
+  botonEliminar: {
+    backgroundColor: 'red',
     color: 'white',
     border: 'none',
     padding: '8px 16px',

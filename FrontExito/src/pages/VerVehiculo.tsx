@@ -1,29 +1,54 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import api from '../api'
 import './RegistroEntrada.css'
+import axios from 'axios'
 
 const VerVehiculo = () => {
   const { id } = useParams()
   const navigate = useNavigate()
+
   const [control, setControl] = useState<any>(null)
+  const [vehiculo, setVehiculo] = useState<any>(null)
+  const [cliente, setCliente] = useState<any>(null)
   const [fechaSalida, setFechaSalida] = useState('')
 
-  const fetchControl = async () => {
-    try {
-      const res = await axios.get(`https://localhost:7136/api/controlvehiculo/${id}`)
-      const data = res.data
-      setControl({
-        ...data,
-        ...Object.fromEntries(Object.entries(data).map(([k, v]) => [k, v === null ? false : v]))
-      })
-    } catch (err) {
-      console.error('Error cargando vehiculo:', err)
-    }
-  }
+  const accesoriosKeys = [
+    'espejoDerecho', 'espejoIzquierdo', 'espejoRetro', 'rejillaAire', 'tapete', 'plumillas', 'memoriaUsb', 'tapaGasolian', 'bateria',
+    'radio', 'vidriosPuertas', 'panoramicoDel', 'panoramicoTra', 'llantaRep', 'placaDel', 'placaTra', 'medidorAceite', 'tapasLlanta',
+    'luzDelDer', 'luzDelIz1', 'luzTrasDer', 'luzTrasIz1', 'rayones', 'pangones', 'kitCarrera', 'tapaRadiador', 'marquillaCromada'
+  ]
 
   useEffect(() => {
-    fetchControl()
+    const fetchAll = async () => {
+      try {
+        const ctrlRes = await api.get(`controlvehiculo/${id}`)
+        const ctrlData = ctrlRes.data
+
+        const accesoriosIniciales = accesoriosKeys.reduce((acc, key) => {
+          acc[key] = ctrlData[key] === true
+          return acc
+        }, {} as Record<string, boolean>)
+
+        setControl({ ...ctrlData, ...accesoriosIniciales })
+
+        if (ctrlData.fecha_salida) {
+          const salidaFormateada = new Date(ctrlData.fecha_salida).toISOString().split('T')[0]
+          setFechaSalida(salidaFormateada)
+        }
+
+        const vehiculoRes = await api.get(`vehiculo/${ctrlData.vehiculoid}`)
+        setVehiculo(vehiculoRes.data)
+
+        const clienteRes = await api.get(`cliente/${vehiculoRes.data.clienteid}`)
+        setCliente(clienteRes.data)
+      } catch (err) {
+        console.error('Error cargando datos:', err)
+      }
+    }
+
+    fetchAll()
   }, [id])
 
   const handleToggle = (key: string) => {
@@ -32,63 +57,45 @@ const VerVehiculo = () => {
 
   const handleActualizar = async () => {
     try {
-      const actualizado = {
+      if (!control || !vehiculo || !cliente) return
+
+      const actualizadoControl = {
         ...control,
         vehiculo: undefined,
-        fecha_salida: control.fecha_salida || null,
-        dias_garantia:
-          control.dias_garantia === '' || control.dias_garantia === undefined
-            ? null
-            : parseInt(control.dias_garantia)
+        fecha_salida: fechaSalida || null,
+        dias_garantia: control.dias_garantia === '' ? null : parseInt(control.dias_garantia)
       }
-  
-      await axios.put(`https://localhost:7136/api/controlvehiculo/${id}`, actualizado)
-      alert('Información actualizada')
+
+      const actualizadoVehiculo = { ...vehiculo, cliente: undefined }
+      const actualizadoCliente = { ...cliente }
+
+      await Promise.all([
+        api.put(`cliente/${cliente.id}`, actualizadoCliente),
+        api.put(`vehiculo/${vehiculo.id}`, actualizadoVehiculo),
+        api.put(`controlvehiculo/${id}`, actualizadoControl)
+      ])
+
+      alert('Información actualizada correctamente')
     } catch (err) {
-      if (axios.isAxiosError(err)) {
-        const mensaje = err.response?.data || 'Error desconocido'
-        const texto = typeof mensaje === 'string' ? mensaje : JSON.stringify(mensaje)
-        alert(texto)
-      } else {
-        alert('Error al procesar la solicitud')
-      }
-    }
-  }
-  
-  
-  const handleDarSalida = async () => {
-    try {
-      // Obtener la fecha actual en formato YYYY-MM-DD (hora de Colombia)
-          // Generar la fecha de hoy en formato compatible con DateTime
-          const hoy = new Date().toISOString().split('T')[0]
-
-
-          const salida = {
-          ...control,
-          vehiculo: undefined,
-          fecha_salida: fechaSalida || hoy,
-          dias_garantia:
-          control.dias_garantia === '' || control.dias_garantia === undefined || isNaN(Number(control.dias_garantia))
-          ? null
-          : parseInt(control.dias_garantia)
+      if(axios.isAxiosError(err)) 
+        {
+          if(err.status === 401) 
+            {
+              const mensaje = "No tiene el permiso necesario para hacer esto"
+              alert(mensaje)
+              return
+            }
         }
-  
-      await axios.put(`https://localhost:7136/api/controlvehiculo/${id}`, salida)
-      alert('Vehículo dado de salida')
-      navigate('/taller')
-    } catch (err) {
       if (axios.isAxiosError(err)) {
         const mensaje = err.response?.data || 'Error desconocido'
-        const texto = typeof mensaje === 'string' ? mensaje : JSON.stringify(mensaje)
-        alert(texto)
+        alert(typeof mensaje === 'string' ? mensaje : JSON.stringify(mensaje))
       } else {
         alert('Error al procesar la solicitud')
       }
     }
   }
-  
 
-  if (!control) return <p>Cargando...</p>
+  if (!control || !vehiculo || !cliente) return <p>Cargando...</p>
 
   return (
     <div className="registro-container">
@@ -110,11 +117,7 @@ const VerVehiculo = () => {
         <div className="registro-fila">
           <div className="campo">
             <label>Técnico Encargado</label>
-            <input
-              type="text"
-              value={control.tecnico_encargado}
-              onChange={(e) => setControl({ ...control, tecnico_encargado: e.target.value })}
-            />
+            <input type="text" value={control.tecnico_encargado} onChange={(e) => setControl({ ...control, tecnico_encargado: e.target.value })} />
           </div>
           <div className="campo">
             <label>Fecha de Ingreso</label>
@@ -122,8 +125,38 @@ const VerVehiculo = () => {
           </div>
         </div>
 
+        <h3>Datos del Vehículo y Cliente</h3>
         <div className="registro-fila">
-          <div className="campo">
+          <div className="grupo">
+            <label>Nombre</label>
+            <input type="text" value={cliente.nombre} onChange={(e) => setCliente({ ...cliente, nombre: e.target.value })} />
+            <label>NIT</label>
+            <input type="text" value={cliente.nit || ''} onChange={(e) => setCliente({ ...cliente, nit: e.target.value })} />
+            <label>CC</label>
+            <input type="text" value={cliente.cc || ''} onChange={(e) => setCliente({ ...cliente, cc: parseInt(e.target.value) || 0 })} />
+            <label>Celular</label>
+            <input type="text" value={cliente.celular || ''} onChange={(e) => setCliente({ ...cliente, celular: e.target.value })} />
+          </div>
+
+          <div className="grupo">
+            <label>Placa</label>
+            <input type="text" value={vehiculo.placa} onChange={(e) => setVehiculo({ ...vehiculo, placa: e.target.value })} />
+            <label>Marca</label>
+            <input type="text" value={vehiculo.marca} onChange={(e) => setVehiculo({ ...vehiculo, marca: e.target.value })} />
+            <label>Modelo</label>
+            <input type="text" value={vehiculo.modelo} onChange={(e) => setVehiculo({ ...vehiculo, modelo: e.target.value })} />
+            <label>Color</label>
+            <input type="text" value={vehiculo.color || ''} onChange={(e) => setVehiculo({ ...vehiculo, color: e.target.value })} />
+            <label>Tipo</label>
+            <input type="text" value={vehiculo.tipo || ''} onChange={(e) => setVehiculo({ ...vehiculo, tipo: e.target.value })} />
+          </div>
+
+          <div className="grupo">
+            <label>Combustible</label>
+            <select value={vehiculo.diesel_gasolina} onChange={(e) => setVehiculo({ ...vehiculo, diesel_gasolina: e.target.value })}>
+              <option value="Gasolina">Gasolina</option>
+              <option value="Diesel">Diesel</option>
+            </select>
             <label>Kilometraje</label>
             <input type="number" value={control.kilometraje} onChange={(e) => setControl({ ...control, kilometraje: Number(e.target.value) })} />
             <label>Nivel</label>
@@ -133,21 +166,17 @@ const VerVehiculo = () => {
 
         <div className="campo">
           <label>Trabajo a realizar</label>
-          <textarea rows={5} value={control.trabajo_realizar || ''} onChange={(e) => setControl({ ...control, trabajo_realizar: e.target.value })} />
+          <textarea rows={4} value={control.trabajo_realizar || ''} onChange={(e) => setControl({ ...control, trabajo_realizar: e.target.value })} />
         </div>
 
         <div className="campo">
           <label>Condición Mecánica</label>
-          <textarea rows={5} value={control.condicion_mecanica || ''} onChange={(e) => setControl({ ...control, condicion_mecanica: e.target.value })} />
+          <textarea rows={4} value={control.condicion_mecanica || ''} onChange={(e) => setControl({ ...control, condicion_mecanica: e.target.value })} />
         </div>
 
-        <h3>Accesorios y Herramientas</h3>
+        <h3>Accesorios</h3>
         <div className="registro-accesorios">
-          {[ 
-            'EspejoDerecho', 'EspejoIzquierdo', 'EspejoRetro', 'RejillaAire', 'Tapete', 'Plumillas', 'MemoriaUsb', 'TapaGasolian', 'Bateria',
-            'Radio', 'VidriosPuertas', 'PanoramicoDel', 'PanoramicoTra', 'LlantaRep', 'PlacaDel', 'PlacaTra', 'MedidorAceite', 'TapasLlanta',
-            'LuzDelDer', 'LuzDelIz1', 'LuzTrasDer', 'LuzTrasIz1', 'Rayones', 'Pangones', 'KitCarrera', 'TapaRadiador', 'MarquillaCromada'
-          ].reduce((cols, key, idx) => {
+          {accesoriosKeys.reduce((cols, key, idx) => {
             const col = Math.floor(idx / 9)
             cols[col] = cols[col] || []
             cols[col].push(key)
@@ -155,40 +184,125 @@ const VerVehiculo = () => {
           }, [] as string[][]).map((col, i) => (
             <div className="columna" key={i}>
               {col.map((key) => (
-                <label key={key}><input type="checkbox" checked={control[key]} onChange={() => handleToggle(key)} /> {key}</label>
+                <label key={key}>
+                  <input type="checkbox" checked={Boolean(control[key])} onChange={() => handleToggle(key)} /> {key}
+                </label>
               ))}
             </div>
-          ))
-        }</div>
+          ))}
+        </div>
 
         <div className="campo">
           <label>Otros Accesorios</label>
-          <textarea rows={5} value={control.OtrosAccesorios || ''} onChange={(e) => setControl({ ...control, OtrosAccesorios: e.target.value })} />
+          <textarea rows={4} value={control.otrosAccesorios || ''} onChange={(e) => setControl({ ...control, otrosAccesorios: e.target.value })} />
         </div>
 
         <div className="campo">
           <label>Observaciones</label>
-          <textarea rows={5} value={control.observacion || ''} onChange={(e) => setControl({ ...control, observacion: e.target.value })} />
+          <textarea rows={4} value={control.observacion || ''} onChange={(e) => setControl({ ...control, observacion: e.target.value })} />
         </div>
 
         <div className="campo">
           <label>Días de Garantía</label>
-          <input
-          type="number"
-          min="0"
-          value={control.dias_garantia ?? ''}
-          onChange={(e) => {
-          const value = e.target.value
-          setControl({ ...control, dias_garantia: value === '' ? null : parseInt(value) })
-          }}
-          />
+          <input type="number" value={control.dias_garantia ?? ''} onChange={(e) => setControl({ ...control, dias_garantia: e.target.value })} />
         </div>
 
         <div className="registro-footer">
-          <button onClick={handleActualizar}>Actualizar</button>
-          <input type="date" value={fechaSalida} onChange={(e) => setFechaSalida(e.target.value)} style={{ margin: '10px' }} />
-          <button onClick={handleDarSalida} style={{ backgroundColor: '#0066cc' }}>Dar Salida</button>
-        </div>
+  <input
+    type="date"
+    value={fechaSalida}
+    onChange={(e) => setFechaSalida(e.target.value)}
+    style={{ marginRight: '10px' }}
+    disabled={!!control.fecha_salida}
+  />
+
+  <button
+    onClick={handleActualizar}
+    style={{ marginRight: '10px' }}
+  >
+    Actualizar Información
+  </button>
+
+  <button
+    style={{ backgroundColor: '#0066cc' }}
+    disabled={!!control.fecha_salida}
+    onClick={async () => {
+      try {
+        if (!control) return
+        const confirmar = window.confirm('¿Estás seguro de que deseas dar salida al vehículo?')
+        if (!confirmar) return
+
+        if(control.dias_garantia == 0)
+        {
+          const confirmar = window.confirm('El vehículo no tiene días de garantía, ¿deseas continuar?')
+          if (!confirmar) return
+        }
+        
+        const fechaFinal = fechaSalida || new Date().toISOString().split('T')[0]
+
+        await api.put(`controlvehiculo/${id}`, {
+          ...control,
+          vehiculo: undefined,
+          fecha_salida: fechaFinal,
+          dias_garantia:
+            control.dias_garantia === '' || isNaN(Number(control.dias_garantia))
+              ? null
+              : parseInt(control.dias_garantia)
+        })
+
+        alert('Vehículo dado de salida')
+        navigate('/taller')
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          const mensaje = err.response?.data || 'Error desconocido'
+          alert(typeof mensaje === 'string' ? mensaje : JSON.stringify(mensaje))
+        } else {
+          alert('Error al procesar la solicitud')
+        }
+      }
+    }}
+  >
+    Dar Salida
+  </button>
+
+  {control.fecha_salida && (
+  <button
+    style={{ backgroundColor: '#cc0000', marginLeft: '10px' }}
+    onClick={async () => {
+      try {
+        const confirmar = window.confirm('¿Deseas cancelar la salida del vehículo y volver a ingresarlo al taller?')
+        if (!confirmar) return
+
+        await api.put(`controlvehiculo/${id}`, {
+          ...control,
+          vehiculo: undefined,
+          fecha_salida: null,
+          dias_garantia:
+            control.dias_garantia === '' || isNaN(Number(control.dias_garantia))
+              ? null
+              : parseInt(control.dias_garantia)
+        })
+
+        alert('Salida cancelada, el vehículo ha sido reingresado al taller.')
+        setFechaSalida('')
+        setControl((prev: any) => ({ ...prev, fecha_salida: null }))
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          const mensaje = err.response?.data || 'Error desconocido'
+          alert(typeof mensaje === 'string' ? mensaje : JSON.stringify(mensaje))
+        } else {
+          alert('Error al procesar la solicitud')
+        }
+      }
+    }}
+  >
+    Cancelar Salida
+  </button>
+)}
+
+</div>
+
+
       </div>
     </div>
   )
